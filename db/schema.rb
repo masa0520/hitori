@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_180429) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_082641) do
+  create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "body"
+    t.string "title", null: false
+    t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname"
     t.integer "age"
@@ -23,4 +35,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_180429) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "stores", "users"
 end

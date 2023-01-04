@@ -1,10 +1,13 @@
 ja:
     activerecord:
-     models:
-       user: 'ユーザー'
-     attributes:
-       user:
-         email: 'メールアドレス'
-         password: 'パスワード'
-         password_confirmation: 'パスワード確認'
-         nickname: 'ニックネーム'
+      models:
+        user: 'ユーザー'
+        store: '施設'
+      attributes:
+        user:
+          email: 'メールアドレス'
+          password: 'パスワード'
+          password_confirmation: 'パスワード確認'
+          nickname: 'ニックネーム'
+        store:
+          title: '施設名'
