@@ -9,6 +9,14 @@
   </div>
 
   <div id="stores" class="min-w-full">
-    <%= render @stores %>
+
+    <% @stores.each do |store| %>
+    <%= link_to store.title, store_path(store) %>
+      <% if current_user.liked?(store) %>
+        <%= button_to 'UnLike', store_likes_path(store_id: store.id), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', store_likes_path(store_id: store.id), method: :post %>
+      <% end %>
+    <% end %>
   </div>
 </div>

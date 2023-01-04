@@ -8,4 +8,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   has_many :stores
+  has_many :likes, dependent: :destroy
+  has_many :liked_stores, through: :likes, source: :store
+
+  def liked?(store)
+    likes.exists?(store_id: store.id)
+  end
 end

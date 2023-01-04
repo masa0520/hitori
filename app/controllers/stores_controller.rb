@@ -35,7 +35,7 @@ class StoresController < ApplicationController
   end
 
   def likes 
-    @likes = current_user.liked_posts
+    @likes = current_user.liked_stores
   end
 
   private

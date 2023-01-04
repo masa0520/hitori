@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_04_082641) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_121026) do
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "store_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_likes_on_store_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body"
     t.string "title", null: false
@@ -35,5 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_082641) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "likes", "stores"
+  add_foreign_key "likes", "users"
   add_foreign_key "stores", "users"
 end
