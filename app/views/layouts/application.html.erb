@@ -13,6 +13,7 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
+    <%= link_to "お一人様", root_path %> |
       <% if logged_in? %>
         <%= render 'shared/header' %>
       <% else %>
