@@ -1,0 +1,7 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    new_store: '投稿'
+    like: 'いいね'
