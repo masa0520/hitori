@@ -6,7 +6,7 @@ class StoresController < ApplicationController
   end
 
   def show
-    #@reviews = @post.reviews.includes(:user).order(created_at: :desc)
+    @reviews = @store.reviews.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -31,7 +31,7 @@ class StoresController < ApplicationController
 
   def destroy
     @store.destroy
-    redirect_to posts_url, success: "Store was successfully destroyed."
+    redirect_to stores_url, success: "Store was successfully destroyed."
   end
 
   def likes 

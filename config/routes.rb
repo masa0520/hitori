@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   resources :users
   resources :stores do
+    resources :reviews, shallow: :true
     resource :likes, only: %i[create destroy]
     collection do
       get 'likes'
