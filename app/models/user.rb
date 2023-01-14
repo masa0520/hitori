@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :stores
   has_many :likes, dependent: :destroy
   has_many :liked_stores, through: :likes, source: :store
+  has_many :reviews, dependent: :destroy
 
   def liked?(store)
     likes.exists?(store_id: store.id)

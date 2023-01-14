@@ -128,6 +128,8 @@ GEM
     irb (1.6.2)
       reline (>= 0.3.0)
     jaro_winkler (1.5.4)
+    jsbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     json (2.6.3)
     jwt (2.6.0)
     kramdown (2.4.0)
@@ -339,6 +341,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   importmap-rails
+  jsbundling-rails
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rails (~> 7.0.4)

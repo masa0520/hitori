@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_04_121026) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_162835) do
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.bigint "user_id", null: false
@@ -18,6 +18,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_121026) do
     t.datetime "updated_at", null: false
     t.index ["store_id"], name: "index_likes_on_store_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "comment"
+    t.float "rate", default: 0.0, null: false
+    t.bigint "user_id"
+    t.bigint "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_reviews_on_store_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -46,5 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_121026) do
 
   add_foreign_key "likes", "stores"
   add_foreign_key "likes", "users"
+  add_foreign_key "reviews", "stores"
+  add_foreign_key "reviews", "users"
   add_foreign_key "stores", "users"
 end

@@ -35,3 +35,7 @@
 
 # Ignore vendor/bundle
 vendor/bundle
+
+/node_modules
+
+/.env
