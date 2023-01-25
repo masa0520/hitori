@@ -21,6 +21,7 @@
         <%= render 'shared/before_login_header' %>
       <% end %>
       <%= yield %>
+      <%= link_to 'マップ検索', stores_path %>
       <%= link_to (t'defaults.new_store'), new_store_path %>
       <%= link_to (t'defaults.like'), likes_stores_path %>
     </main>
