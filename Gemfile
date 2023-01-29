@@ -7,6 +7,8 @@ gem 'rails-i18n'
 gem "jsbundling-rails"
 gem 'dotenv-rails'
 gem "geocoder"
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
