@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="corporate" >
   <head>
     <title>Hitori</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,18 +12,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-    <%= link_to "お一人様", root_path %> |
+  <body class="flex flex-col min-h-screen">
+    <main>
       <% if logged_in? %>
         <%= render 'shared/header' %>
       <% else %>
         <%= render 'shared/before_login_header' %>
       <% end %>
       <%= yield %>
-      <%= link_to 'マップ検索', stores_path %>
-      <%= link_to (t'defaults.new_store'), new_store_path %>
-      <%= link_to (t'defaults.like'), likes_stores_path %>
+      <%= render 'shared/footer' %>
     </main>
   </body>
 </html>
