@@ -12,3 +12,4 @@ ja:
         store:
           title: '施設名'
           address: '住所'
+          body: 'キャプション'

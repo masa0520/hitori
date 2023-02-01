@@ -2,6 +2,8 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@heroicons/vue": "^2.0.14",
+    "daisyui": "^2.49.0",
     "esbuild": "^0.16.15"
   },
   "scripts": {
