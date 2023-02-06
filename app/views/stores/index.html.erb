@@ -68,7 +68,15 @@
 
   <div class="card card-compact w-96 bg-base-100 shadow-xl">
     <% @stores.each do |store| %>
-    <figure><img height="50" src="/assets/no-image.png" alt="store" /></figure> 
+    <figure>
+      <% if store.images.present? %>
+        <% store.images.each do |image| %>
+            <%= image_tag image %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'no-image.png' %>
+      <% end %>
+    </figure> 
     <div class="card-body">
       <h2 class="card-title"><%= link_to store.title, store_path(store) %></h2>
       <% if current_user.liked?(store) %>

@@ -10,6 +10,7 @@ ja:
           password_confirmation: 'パスワード確認'
           nickname: 'ニックネーム'
         store:
-          title: '施設名'
-          address: '住所'
+          title: '施設名(必須)'
+          address: '住所(必須)'
           body: 'キャプション'
+          images: '画像(ファイルを複数選択する場合は、Shiftキー、もしくはctrl、commandとクリックで選択できます。)'
