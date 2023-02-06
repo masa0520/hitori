@@ -28,7 +28,7 @@
           </div>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><%= link_to (t'defaults.like'), likes_stores_path %></li>
+          <li><%= link_to (t'defaults.bookmark'), bookmarks_stores_path %></li>
           <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
           <li><%= link_to (t'defaults.logout'), :logout, data: { turbo_method: :delete } %></li>
         </ul>
