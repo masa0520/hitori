@@ -9,6 +9,7 @@ ja:
           password: 'パスワード'
           password_confirmation: 'パスワード確認'
           nickname: 'ニックネーム'
+          avatar: 'アバター'
         store:
           title: '施設名(必須)'
           address: '住所(必須)'

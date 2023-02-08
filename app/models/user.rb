@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_stores, through: :bookmarks, source: :store
   has_many :reviews, dependent: :destroy
+  has_one_attached :avatar
 
   def liked?(store)
     likes.exists?(store_id: store.id)
