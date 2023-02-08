@@ -24,12 +24,16 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="/assets/profile.png" />
+            <% if current_user.avatar.present? %>
+              <%= image_tag current_user.avatar %>
+            <% else %>
+              <img src="/assets/profile.png" />%
+            <% end %>
           </div>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><%= link_to (t'defaults.like'), likes_stores_path %></li>
-          <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+          <li><%= link_to (t'defaults.bookmark'), bookmarks_stores_path %></li>
+          <li><%= link_to (t'defaults.profile'), profile_path %></li>
           <li><%= link_to (t'defaults.logout'), :logout, data: { turbo_method: :delete } %></li>
         </ul>
       </div>

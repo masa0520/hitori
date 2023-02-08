@@ -39,3 +39,5 @@ vendor/bundle
 /node_modules
 
 /.env
+
+/public/uploads

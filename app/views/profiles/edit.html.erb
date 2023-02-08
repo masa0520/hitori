@@ -1,0 +1,22 @@
+<div class="mx-auto md:w-1/3 w-full">
+  <%= form_with(model: @user, url: profile_path, class: 'contents') do |f| %>
+    <div class="my-5">
+      <%= f.label :nickname, Store.human_attribute_name(:nickname) %><br />
+      <%= f.text_field :nickname, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  
+    <div class="my-5">
+      <%= f.label :email, Store.human_attribute_name(:email) %><br />
+      <%= f.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= f.label :avatar, Store.human_attribute_name(:avatar) %><br />
+      <%= f.file_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  
+    <div class="inline">
+      <%= f.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    </div>
+  <% end %>
+</div>

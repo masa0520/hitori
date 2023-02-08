@@ -34,8 +34,8 @@ class StoresController < ApplicationController
     redirect_to stores_url, success: "Store was successfully destroyed."
   end
 
-  def likes 
-    @likes = current_user.liked_stores
+  def bookmarks
+    @bookmarks = current_user.bookmarked_stores
   end
 
   private
@@ -46,6 +46,6 @@ class StoresController < ApplicationController
 
 
     def store_params
-      params.require(:store).permit(:title, :body, :address, :latitude, :longitude, :user_id)
+      params.require(:store).permit(:title, :body, :address, :latitude, :longitude, :user_id, images: [])
     end
 end

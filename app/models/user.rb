@@ -9,10 +9,16 @@ class User < ApplicationRecord
 
   has_many :stores
   has_many :likes, dependent: :destroy
-  has_many :liked_stores, through: :likes, source: :store
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarked_stores, through: :bookmarks, source: :store
   has_many :reviews, dependent: :destroy
+  has_one_attached :avatar
 
   def liked?(store)
     likes.exists?(store_id: store.id)
+  end
+
+  def bookmarked?(store)
+    bookmarks.exists?(store_id: store.id)
   end
 end
