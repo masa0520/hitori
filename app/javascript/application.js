@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 import './js/raty';
+
+import jquery from "jquery"
+window.$ = jquery

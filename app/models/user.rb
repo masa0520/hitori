@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :stores
   has_many :likes, dependent: :destroy
+  has_many :likes_stores, through: :likes, source: :store
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_stores, through: :bookmarks, source: :store
   has_many :reviews, dependent: :destroy
